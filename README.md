@@ -15,4 +15,4 @@ Hacks for the FDM Maximisation Hackathon 2018
 ## Idea
 - Brute force based algorithm (DFS)
 - Prunned when the traversed sequence is not a prefix of any word in the dictionary 
-- Dicitonary stored as a sorted list. When queried, do a bisection search, check whether it is an exact match. If not, check whether the word at the insertion point contains the query as a prefix. If it does, continue the search.
+- Dicitonary stored as a sorted list. When queried, do a binary search, check whether it is an exact match. If not, check whether the word at the insertion point contains the query as a prefix. If it does, continue the search.
