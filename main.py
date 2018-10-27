@@ -1,5 +1,6 @@
 import algorithms
 import dictionary
+import json
 
 
 DICTS = [
@@ -9,11 +10,13 @@ DICTS = [
 	"resources/real/Dictionary4.txt"
 ]
 
-BOARD = ["S", "N", "O", "W", "O", "S", "L", "F", "O", "R", "E", "A", "E", "E", "M", "K"]
+BOARD = ["C", "N", "R", "A", "A", "E", "N", "E", "T", "L", "O", "N", "O", "Y", "E", "S"]
 
 SIZE = 4
 
 MIN_LENGTH = 3
+
+ANS_FILE = "output.txt"
 
 def main(solve, board):
 	d = dictionary.Dictionary(DICTS)
@@ -26,4 +29,8 @@ def main(solve, board):
 
 
 if __name__ == "__main__":
-	print(main(algorithms.brute_force.solve, BOARD))
+	ans = main(algorithms.brute_force.solve, BOARD)
+	with open(ANS_FILE, "w") as f:
+		f.write("\n".join(ans))
+
+	print("Answer outputted to %s"%ANS_FILE)

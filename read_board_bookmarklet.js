@@ -1,0 +1,1 @@
+javascript:var letterElems = document.getElementsByClassName("fdm-letter"); var output = ""; for(var i = 0; i < letterElems.length; i++){ if(output.length > 0){ output = output + ", " } output = output + '"'+letterElems[i].innerText + '"'; } window.alert("[" + output + "]")

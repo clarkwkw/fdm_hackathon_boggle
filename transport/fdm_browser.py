@@ -24,6 +24,10 @@ class FDMBrowser:
 			if "no such user!" in page_content:
 				raise Exception("Cannot login to FDM")
 
+		print("cookies generated:")
+		for cookie in self.__cookie_jar:
+   			print(cookie.name, cookie.value, cookie.domain)
+
 	def load_problem(self, problem_id, is_practice = True):
 		if is_practice:
 			return self.load_practice_problem(problem_id)
@@ -59,3 +63,9 @@ class FDMBrowser:
 
 	def load_contest_problem(self, problem_id):
 		raise NotImplementedError()
+
+	def logout(self):
+		with self.__opener.open(self.__url+"logout") as page:
+			page_content = page.read().decode("utf-8")
+			if page.getcode() != 200:
+				raise Exception("Unknown error, check html content:\n"+page_content)
