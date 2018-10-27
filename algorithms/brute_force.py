@@ -15,10 +15,10 @@ def __find_words(board, dictionary, i, j, size, visited, traversed):
 	all_words = frozenset()
 	visited[i][j] = True
 
-	exists, prefix = dictionary.exists_or_prefix(traversed)
+	exists, prefix = dictionary.exists_or_prefix(traversed + board[i][j])
 
 	if exists:
-		all_words = frozenset([traversed])
+		all_words = frozenset([traversed + board[i][j]])
 
 	if len(traversed) == 0 or prefix:
 

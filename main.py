@@ -2,7 +2,6 @@ import algorithms
 import dictionary
 import json
 
-
 DICTS = [
 	"resources/real/Dictionary1.txt",
 	"resources/real/Dictionary2.txt",
@@ -10,11 +9,11 @@ DICTS = [
 	"resources/real/Dictionary4.txt"
 ]
 
-BOARD = ["T", "D", "O", "T", "R", "O", "F", "S", "I", "E", "S", "E", "T", "I", "S", "T"]
+BOARD = ["C", "N", "R", "A", "A", "E", "N", "E", "T", "L", "O", "N", "O", "Y", "E", "S"]
 
 SIZE = 4
 
-MIN_LENGTH = 3
+MIN_LENGTH = 1
 
 ANS_FILE = "output.txt"
 
@@ -31,6 +30,6 @@ def main(solve, board):
 if __name__ == "__main__":
 	ans = main(algorithms.brute_force.solve, BOARD)
 	with open(ANS_FILE, "w") as f:
-		f.write("\n".join(ans))
+		f.write("\n".join(sorted(ans)))
 
 	print("Answer outputted to %s"%ANS_FILE)
