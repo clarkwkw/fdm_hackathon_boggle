@@ -10,7 +10,7 @@ DICTS = [
 	"resources/real/Dictionary4.txt"
 ]
 
-BOARD = ["C", "N", "R", "A", "A", "E", "N", "E", "T", "L", "O", "N", "O", "Y", "E", "S"]
+BOARD = ["T", "D", "O", "T", "R", "O", "F", "S", "I", "E", "S", "E", "T", "I", "S", "T"]
 
 SIZE = 4
 

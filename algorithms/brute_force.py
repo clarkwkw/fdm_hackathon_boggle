@@ -17,6 +17,9 @@ def __find_words(board, dictionary, i, j, size, visited, traversed):
 
 	exists, prefix = dictionary.exists_or_prefix(traversed)
 
+	if exists:
+		all_words = frozenset([traversed])
+
 	if len(traversed) == 0 or prefix:
 
 		for di in range(-1, 1 + 1):
@@ -28,8 +31,5 @@ def __find_words(board, dictionary, i, j, size, visited, traversed):
 					all_words = all_words.union(words)
 
 	visited[i][j] = False
-
-	if len(all_words) == 0 and exists:
-		return frozenset([traversed])
 
 	return all_words
