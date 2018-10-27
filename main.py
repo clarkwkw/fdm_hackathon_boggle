@@ -9,35 +9,21 @@ DICTS = [
 	"resources/real/Dictionary4.txt"
 ]
 
-BOARD = [
-	["S", "S", "L", "E"],
-	["A", "T", "M", "Z"], 
-	["L", "S", "R", "A"],
-	["T", "P", "L", "E"]
-]
+BOARD = ["S", "N", "O", "W", "O", "S", "L", "F", "O", "R", "E", "A", "E", "E", "M", "K"]
 
 SIZE = 4
 
-'''
-DICTS = [
-	"resources/mock/Dictionary.txt"
-]
+MIN_LENGTH = 3
 
-
-BOARD = [
-	["G", "I", "Z"],
-	["U", "E", "K"],
-	["Q", "S", "E"]
-]
-
-SIZE = 3
-'''
-
-def main(solve):
+def main(solve, board):
 	d = dictionary.Dictionary(DICTS)
-	for word in solve(BOARD, d, SIZE):
-		print(word)
+	ans = []
+	for word in solve(board, d, SIZE):
+		if len(word) >= MIN_LENGTH:
+			ans.append(word)
+
+	return ans
 
 
 if __name__ == "__main__":
-	main(algorithms.brute_force.solve)
+	print(main(algorithms.brute_force.solve, BOARD))
